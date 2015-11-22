@@ -19,15 +19,46 @@
 	<body>
 			
 			<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a><a href="admin.php" class="navbar-link"> BACK ADMIN</a></p>
+    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
   </div>
-			
-							
+			<div class="row">
+				<div>
+				<div class="col-sm-5 container jumbotron" style="background-color: lightgreen" align="center">
+					<h2>Please enter the audio file</h2>
+				
+					<h2>
+					<form action="demo_form.asp">
+			         	<input type="file" name="audio" accept="audio/*">
+				 		<input type="submit">
+					</form>
+					</h2>
+				</div>
+				<div class="col-sm-2 jumbotron" style="background-color: lightblue" align="center">
+					<h2>or</h2>
+				</div>
+				<div class="col-sm-5 jumbotron" style="background-color: lightblue" align="center">
+					<h2>Search Google:</h2>
+					<h2>
+						<form action="action_page.php">
+							  
+							  <input type="search" name="googlesearch">
+							  <input type="submit">
+						</form>
+					</h2>
+				</div>
+				</div>
+  
+			</div>
+		
+		
 	</body>
 	<footer>
 		
 		
 	</footer>
-	
+	<script>
+		
+		
+	</script>
 	
 </html>

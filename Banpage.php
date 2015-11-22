@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html> 
 	<head>
-		  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		  
 		<meta charset="utf-8">
-		<title>Insert company name here Beta</title>
 		<link href="assets/css/bootstrap.css" rel="stylesheet">
 		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="assets/css/docs.css" rel="stylesheet">
@@ -17,33 +14,24 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		
+		<h1 align="center" style="background-color: green; color: white">Welcome to ...</h1>
 	</head>
-
- 
 	<body>
-		<div class="container">
+			
+			<div class="container">
     <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
   </div>
-		<header>
-	
-	Comunication log page
-	
-</header>
-		<div class="row center">
 			
-			<div class="col-md-8">
-				
-				messages here......
-			</div>
-			<div class="col-md-4">
-		<p><a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >
-									<i class="glyphicon glyphicon-plus"></i>
-									Send Message
-							</a></p>
-		</div>
-		</div>
+							<li><a class="btn-lg btn btn-warning toggle-modal add" data-target="#myModal" data-toggle="modal"  >Delete user from list</a></li>
+
+							<li><a cl ass="btn-lg btn btn-default" data-target="#myModal" data-toggle="modal"  >Delete user from list</a></li>
+
+	</body>
+	<footer>
 		
 		
+	</footer>
+	<script>
 		<div class="modal fade" id="myModal"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
 							  <div class="modal-dialog">
 							    <div class="modal-content">
@@ -56,20 +44,11 @@
 							      	
 									<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
 									
-									<h2>My Note</h2>
-									
-									
-									<textarea ng-model="message" cols="40" rows="10"></textarea>
-									
-									<p>
-									<button ng-click="save()">Save</button>
-									<button ng-click="clear()">Clear</button>
-									</p>
-									
-									<p>Number of characters left: <span ng-bind="left()"></span></p>
-									
-									<script src="myNoteApp.js"></script>
-									<script src="myNoteCtrl.js"></script>
+									<form>
+										
+										
+									</form>
+									Delete<input type="text " />from further communicatioons <a class="btn btn-primary btn-lg" >yes</a>
 									
 									</body>
 							      	
@@ -98,6 +77,7 @@
 	
 	
 </script>
-	</body>
-				
-	</html>
+		
+	</script>
+	
+</html>

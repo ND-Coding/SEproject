@@ -21,15 +21,13 @@
 
  
 	<body>
-	<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
+	
   <div class="container row">
-  	<div class="col-md-9"> container
+  	<div class="col-md-9"> 
   		
   		
   		<div class="jumbotron">
-			  <h1>Welcome to the "Insert  company name here  "</h1>
+			  <h1>Welcome to the "Insert  company name here "</h1>
 			  
 						  
 					  <p>Here at "insert name here", we help you find th car of your dreams</p>
@@ -47,7 +45,7 @@
 					<h2>If you do not have an Account, please register here</h2> 
 			 
 			  
-			  <p><a class="btn btn-primary btn-lg " href="register.php">
+			  <p><a class="btn btn-primary btn-lg toggle-modal add" data-target="#Register" data-toggle="modal" >
 									<i class="glyphicon glyphicon-plus"></i>
 									Register
 							</a></p>
@@ -69,6 +67,10 @@
   		
   		
   	<div class="col-md-3">
+  		<div class="container jumbotron"> AD</div>
+  		<div class="container jumbotron"> AD</div>
+  		<div class="container jumbotron"> AD</div>
+  		<div class="container jumbotron"> AD</div>
   		<div class="container jumbotron"> AD</div>
   		<div class="container jumbotron"> AD</div>
   		
@@ -116,6 +118,36 @@
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							        
+							      </div>
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
+							<div class="modal fade" id="Register"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" style="text-align: center"> <i class="glyphicon glyphicon-user"></i>Enter new car info</h4> 
+							      </div>
+							      <div class="modal-body">
+							      	
+							      	
+									<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+									<form>
+										<?php 
+										include 'register.php';
+										
+										?>
+									Pleases delete my account <a class="btn btn-warning">yes</a>
+									</form>	
+									</body>
+							      	
+							      	</div>
+							        
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							       
 							      </div>
 							    </div><!-- /.modal-content -->
 							  </div><!-- /.modal-dialog -->

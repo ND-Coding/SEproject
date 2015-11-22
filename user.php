@@ -24,21 +24,11 @@
 		<div class="container">
     <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
   </div>
-		<header>Welcome  "insert user name "</header>
 		<div>
 			
-			<div class="col-md-4">
-				<ul>
-					
-					<li><a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Stop communications(delete account)</a></li>
-					<li><a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a></li>
-					
-
-					
-				</ul>
-			</div>
 			
-			<div class="col-md-8"> 
+			
+			<div class="container"> 
 				View messages
 				<table class="table table-hover">
 					<thead>
@@ -75,7 +65,16 @@
 					
 				</table>
 				
+				<div class="container "style="center">
+					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionarie</a>
+					<a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a>
+
+					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
+
+					
 				
+			</div>
+				</div>
 				
 				</div>
 			
@@ -86,19 +85,29 @@
 							    <div class="modal-content">
 							      <div class="modal-header">
 							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							        <h4 class="modal-title" style="text-align: center"> <i class="glyphicon glyphicon-user"></i>Enter new car info</h4> 
+							        <h4 class="modal-title" style="text-align: center"> <i class="glyphicon glyphicon-user"></i>Enter messgae</h4> 
 							      </div>
 							      <div class="modal-body">
 							      	
-							      	
-									<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
-									<form>
-									<a class="btn-lg" href="questionarie.php">SEND first message</a>
+							      	<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+									
+									<h2>My Message</h2>
 									
 									
-									<a class="btn btn-lg" href="log.php">Check Communication log</a>
-									</form>	
+									<textarea ng-model="message" cols="40" rows="10"></textarea>
+									
+									<p>
+									<button ng-click="save()">Save</button>
+									<button ng-click="clear()">Clear</button>
+									</p>
+									
+									<p>Number of characters left: <span ng-bind="left()"></span></p>
+									
+									<script src="myNoteApp.js"></script>
+									<script src="myNoteCtrl.js"></script>
+									
 									</body>
+							      	
 							      	
 							      	</div>
 							        

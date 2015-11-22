@@ -53,7 +53,7 @@
 					<tbody>
 						<tr>
 							<th>1</th>
-							<td>tom</td>
+							<td>Tom</td>
 							<td><a class="btn btn-lg" href="log.php">Check Communication log</a></td>
 							<td>hi</td>
 							<td>no</td>
