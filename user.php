@@ -21,9 +21,10 @@
 
  
 	<body>
-		<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
+ <?php
+    include 'UserNavBar.php';
+    ?>
+ 
 		<div>
 			
 			
