@@ -38,7 +38,6 @@
         <li class="active"><a href="cardatabase.php">Modify Cars </a></li>
         <li><a href="QuestionMng.php">Modify Questions</a></li>
 		<li><a href="Banpage.php">Ban User</a></li>
-		<li><a href="QuestionMng.php">Modify Questions</a></li>
       </ul>
 	  <a class="nav navbar-nav navbar-right" href="home.php"> Log Out </a>
     </div><!-- /.navbar-collapse -->
