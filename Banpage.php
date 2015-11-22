@@ -14,17 +14,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		
-		<h1 align="center" style="background-color: green; color: white">Welcome to ...</h1>
-	</head>
-	<body>
+		<?php
+    include 'AdminNavBar.php';
+    ?>
+			<body>
 			
-			<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
 			
-							<li><a class="btn-lg btn btn-warning toggle-modal add" data-target="#myModal" data-toggle="modal"  >Delete user from list</a></li>
-
-							<li><a cl ass="btn-lg btn btn-default" data-target="#myModal" data-toggle="modal"  >Delete user from list</a></li>
+							
 
 	</body>
 	<footer>

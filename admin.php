@@ -25,21 +25,15 @@
  
 	<body>
 		
-		<header><h2>welcome ADMIN</h2></header>
-		<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
+    <?php
+    include 'AdminNavBar.php';
+    ?>
+ 
 		<div>
 			
-			<div class="col-md-4">
-				<ul>
-					<li><a class="btn-lg btn btn-default" href="cardatabase.php">CUT TO car database</a></li>
-					<li><a class="btn-lg btn btn-default" href="QuestionMng.php"  >Question Manager</a></li>
-					<li><a class="btn-lg btn btn-default" href="Banpage.php" >User Ban List</a></li>
-				</ul>
-			</div>
 			
-			<div class="col-md-8"> 
+			
+			<div class="container"> 
 				List of users
 				<table class="table table-hover">
 					<thead>

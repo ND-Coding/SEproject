@@ -138,7 +138,6 @@
 										include 'register.php';
 										
 										?>
-									Pleases delete my account <a class="btn btn-warning">yes</a>
 									</form>	
 									</body>
 							      	

@@ -23,24 +23,26 @@
  
 	<body>
 	
-		<div>
+		<?php
+    include 'AdminNavBar.php';
+    ?>
 			<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
-			<div class="col-md-8">
 				car info below....
 				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th>Car #</th>
+							<th>Edit</th>
 							<th>Car name</th>
 							<th>Car type</th>
 							<th>Min- max price</th>
 							<th>Details</th>
+							<th>link</th>
 					</thead>
 					<tbody>
 						<tr>
 							<th>1</th>
+							<td><a></a></td>
 							<td>toyota corolla</td>
 							<td>compact</td>
 							<td>$1650</td>
@@ -58,7 +60,7 @@
 				
 			</div>
 			
-			<div class="col-md-4">
+			<div class="container">
 		<p><a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >
 									<i class="glyphicon glyphicon-plus"></i>
 									Enter car info

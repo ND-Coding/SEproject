@@ -21,9 +21,9 @@
 
  
 	<body>
-		<div class="container">
-    <p class="navbar-text navbar-center"><a href="home.php" class="navbar-link"> BACK HOME</a></p>
-  </div>
+		<?php
+    include 'AdminNavBar.php';
+    ?>
 		<header>
 	
 	Comunication log page
@@ -40,9 +40,62 @@
 									<i class="glyphicon glyphicon-plus"></i>
 									Send Message
 							</a></p>
+		<p><a class="btn btn-primary btn-lg toggle-modal add" data-target="#car" data-toggle="modal" >
+									<i class="glyphicon glyphicon-plus"></i>
+									View Car database
+							</a></p>
 		</div>
 		</div>
-		
+		<div class="modal fade" id="car"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" style="text-align: center"> <i class="glyphicon glyphicon-user"></i> Send message</h4> 
+							      </div>
+							      <div class="modal-body">
+							      	
+							      	
+									<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+									<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Car #</th>
+							<th>Edit</th>
+							<th>Car name</th>
+							<th>Car type</th>
+							<th>Min- max price</th>
+							<th>Details</th>
+							<th>link</th>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td><a></a></td>
+							<td>toyota corolla</td>
+							<td>compact</td>
+							<td>$1650</td>
+							<td>Great exterior</td>
+						</tr>
+						
+						
+					</tbody>
+									
+									<script src="myNoteApp.js"></script>
+									<script src="myNoteCtrl.js"></script>
+									
+									</body>
+							      	
+							      	</div>
+							        
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							       
+							      </div>
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 		
 		<div class="modal fade" id="myModal"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
 							  <div class="modal-dialog">
