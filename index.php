@@ -3,7 +3,10 @@
 	<head>
 		<?php
 			include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-			include(INCLUDES_DIRECTORY."head.php");			
+			include($INCLUDES_DIRECTORY."/head.php");	
+			//tempfix
+				include 'includes/head.php';	
+			
 		?>
 	</head>
 	<body>
@@ -122,6 +125,7 @@
 		</div>
 		<?php
 			include(INCLUDES_DIRECTORY."scripts.php");
+			include 'includes/scripts.php';
 		?>
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {
