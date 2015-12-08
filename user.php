@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<?php
-			include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'] . "/~dallingn1/2014fall/projects/php/config.php");
 			include(INCLUDES_DIRECTORY."head.php");
-			include 'includes/head.php';	//tempfix
+			//include 'includes/head.php';	//tempfix
 		?>
 	</head>
 

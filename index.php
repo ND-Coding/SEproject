@@ -3,10 +3,7 @@
 	<head>
 		<?php
 			include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-			include($INCLUDES_DIRECTORY."/head.php");	
-			//tempfix
-				include 'includes/head.php';	
-			
+			include(INCLUDES_DIRECTORY."/head.php");			
 		?>
 	</head>
 	<body>
@@ -24,8 +21,10 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">						
 						<?php
-							if($_SESSION['privilige'] === 1) {
-								print "<li><a href=\"/admin/admin.php\">Admin</a></li>";
+							if (isset($_SESSION['privilige'])) {
+								if ($_SESSION['privilige'] === 1) {
+									print "<li><a href=\"/admin/admin.php\">Admin</a></li>";
+								}
 							}
 						?>
 					</ul>
@@ -125,7 +124,6 @@
 		</div>
 		<?php
 			include(INCLUDES_DIRECTORY."scripts.php");
-			include 'includes/scripts.php';
 		?>
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {

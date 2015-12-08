@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en"> 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">		
-		<script src="/js/jquery-2.1.4.min.js"></script>
-	</head>
-<body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -30,5 +21,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</body>
-</html>
