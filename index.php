@@ -34,7 +34,7 @@
 			</div>
 			<div class="col-md-9"> 
 				<div class="jumbotron">
-					<h1>Welcome to the "Insert  company name here "</h1>
+					<h1>Welcome to the carasmaic.com</h1>
 					<p>Here at "insert name here", we help you find th car of your dreams</p>
 					<h2>Advisor </h2>
 					<h3>About</h3>
