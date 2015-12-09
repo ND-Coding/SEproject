@@ -35,12 +35,13 @@
 			<div class="col-md-9"> 
 				<div class="jumbotron">
 					<h1>Welcome to the carasmaic.com</h1>
-					<p>Here at "insert name here", we help you find th car of your dreams</p>
+					<p>Here at carasmaic, we help you find the car of your dreams!</p>
 					<h2>Advisor </h2>
 					<h3>About</h3>
 					<p>-details..</p>
-					<h2>What do we do :</h2>
-					<h3>details</h3>
+					<h2>What we do :</h2>
+					<h4>You fill out a simple questionnaire and are then put into contact with a 
+					car buying expert who will personally help find you the best car for your situation!</h4>
 					<p>- </p>
 				</div>	
 				<div>	 
