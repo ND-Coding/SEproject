@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<?php
-			include($_SERVER['DOCUMENT_ROOT'] . "/~dallingn1/2014fall/projects/php/config.php");
-			include(INCLUDES_DIRECTORY."head.php");
+			include("/php/config.php");
+			include("/includes/head.php");
 			//include 'includes/head.php';	//tempfix
 		?>
 	</head>

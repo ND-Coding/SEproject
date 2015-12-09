@@ -2,17 +2,16 @@
 <html lang="en"> 
 <head>
 	<?php
-		include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-		include(INCLUDES_DIRECTORY."head.php");
+		include("../php/config.php");
 		include '../includes/head.php';	
 	?>
 </head>
 <body>	
 	<?php
-		include(INCLUDES_DIRECTORY."AdminNavBar.php");
+		include("../includes/AdminNavBar.php");
 	?>
 	<div>
-		<div class="container"> 
+		<div class="container">
 			List of users
 			<table class="table table-hover">
 				<thead>

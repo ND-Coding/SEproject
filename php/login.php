@@ -1,6 +1,6 @@
 <?php
-	include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-	include(PHP_DIRECTORY . "db.php");
+	include("config.php");	
+	include("db.php");
 	
 	$user = $_POST['email'];	
 	$pass = $_POST['password'];

@@ -2,14 +2,13 @@
 <html lang="en"> 
 	<head>
 		<?php
-			include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-			include(INCLUDES_DIRECTORY."head.php");
-			include 'includes/head.php';	//tempfix
+			include("php/config.php");				
+			include("includes/head.php");		
 		?>
 	</head>
 	<body>
 		<?php
-			include 'UserNavBar.php';
+			include '../includes/UserNavBar.php';
 		?>
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
