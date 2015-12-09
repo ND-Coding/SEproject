@@ -2,9 +2,8 @@
 <html lang="en"> 
 	<head>
 		<?php
-			include($_SERVER['DOCUMENT_ROOT'] . "/Projects/SEProject/php/config.php");
-			include(INCLUDES_DIRECTORY."/head.php");
-			print INCLUDES_DIRECTORY;
+			include("php/config.php");				
+			include("includes/head.php");	
 		?>
 	</head>
 	<body>
@@ -125,7 +124,7 @@
 			</div><!-- /.modal-dialog -->
 		</div>
 		<?php
-			include(INCLUDES_DIRECTORY."scripts.php");
+			include("includes/scripts.php");
 		?>
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {
