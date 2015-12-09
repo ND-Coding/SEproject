@@ -24,7 +24,7 @@
 	<body>
 	
 		<?php
-    include 'AdminNavBar.php';
+    include 'includes/AdminNavBar.php';
     ?>
 			<div class="container">
 				car info below....

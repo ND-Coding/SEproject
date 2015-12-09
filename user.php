@@ -11,7 +11,7 @@
 
 	<body>
 		<?php
-			include(INCLUDES_DIRECTORY.'UserNavBar.php');
+			include('includes/UserNavBar.php');
 		?>
 
 		<div>
@@ -106,7 +106,7 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->		
 		<?php
-			include(INCLUDES_DIRECTORY."scripts.php");
+			include("/includes/scripts.php");
 		?>
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {
