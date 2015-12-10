@@ -17,6 +17,7 @@
 	if($result['password'] === $pass) {		
 		$_SESSION['user'] = $result['email'];
 		$_SESSION['privilige'] = $result['privilige'];
+		
 		header("Location: ../admin/admin.php");
 	} else {
 		echo "Incorrect Password";

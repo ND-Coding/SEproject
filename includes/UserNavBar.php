@@ -13,7 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <a class="nav navbar-nav navbar-right" href = "home.php"> Log Out </a>
+	  <a class="nav navbar-nav navbar-right" href = "../index.php"> Log Out </a>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
