@@ -17,8 +17,18 @@
 	if($result['password'] === $pass) {		
 		$_SESSION['user'] = $result['email'];
 		$_SESSION['privilige'] = $result['privilige'];
+		$_SESSION['name'] = $result['name'];
+		if ($_SESSION['privilige'] === "2"){
+			header("Location: ../user.php");
+		}		
+		if($_SESSION['privilige'] === "1"){
+			header("Location: ../admin/admin.php");
+		}
 		
-		header("Location: ../admin/admin.php");
+		echo "You have been banned until further notice";
+		die();
+		
+		
 	} else {
 		echo "Incorrect Password";
 	}

@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html> 
 	<head>
-		<meta charset="utf-8">
-		<link href="assets/css/bootstrap.css" rel="stylesheet">
-		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="assets/css/docs.css" rel="stylesheet">
-		<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="../content/css/main.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		
+		<?php
+			include("../php/config.php");
+			include("../php/db.php");			
+			include("../includes/head.php");
+		?>
 		
 	<body>
 			
 		<?php
-	include '../includes/head.php';
 		include("../includes/AdminNavBar.php");
-	?>
+		?>
 <div class="col-md-8"> 
 	<form>
 				Edit Questions
@@ -34,6 +26,7 @@
 							
 					</thead>
 					<tbody>
+						<!--
 						<tr>
 							<th>1</th>
 							<td><input type="text" name="Question 1 :....." placeholder="Question 1" /></td>
@@ -56,6 +49,32 @@
 							<td><input type="submit" /></td>
 							
 						</tr>
+						-->
+						<?php
+							$query = "SELECT * FROM question WHERE active = 1";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $question) {
+								$id = $question['id'];
+								$name = $question['description'];
+								print "
+								<tr>
+									<th>$id</th>
+									<td><input type='text' name='' placeholder='$name' /></td>
+								";
+								if ($question['required'] === "1"){
+									print "<td><input type='checkbox' checked = 'true' id='required'/></td>";
+								} else {
+									print "<td><input type='checkbox' id='required'/></td>";
+								}
+								print "								
+									<td><input type='submit' /></td>
+									</tr>
+								";
+								
+							}
+						?>
 					</tbody>
 					
 					
@@ -77,14 +96,8 @@
 		
 	</footer>
 	
-	<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
-			
-	
-	
-		
-	</script>
+	<?php
+			include("../includes/scripts.php");
+		?>
 	
 </html>

@@ -13,7 +13,24 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <a class="nav navbar-nav navbar-right" href = "../index.php"> Log Out </a>
+      <ul class="nav navbar-nav">
+      	<?php
+      		if(isset($_SESSION['name'])){
+      	?>
+      	
+      	<li><a class="nav navbar-nav" href = "#">Hello <?= $_SESSION['name']; ?></a></li>
+      	
+      	<?php
+			} else {
+      	?>
+      	
+      	<li><a class="nav navbar-nav" href = "#">No one is logged in.</a></li>
+      	
+      	<?php } ?>
+      	
+      	<li><a class="nav navbar-nav navbar-right" href="php/logout.php"> Log Out </a></li>	
+      </ul>
+	  
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

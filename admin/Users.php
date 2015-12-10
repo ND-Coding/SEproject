@@ -2,15 +2,131 @@
 <html> 
 	<head>
 		<?php
-			include("../php/config.php");				
-			include("../includes/head.php");	
-		?>
-	</head>
-	<?php
 	
 		include("../includes/AdminNavBar.php");
+		include("../php/config.php");
+			include("../php/db.php");			
+			include("../includes/head.php");
 	?>
+		
+	</head>
+	
 	<body>
+		
+		
+		
+		<div class="container">
+			<div class="col-md-6">
+				User list
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>User id</th>
+							<th>Email</th>
+							
+							<th>Description</th>
+						
+					</thead>
+					<tbody>
+						<?php
+						
+						
+							$query = "SELECT * FROM `user` WHERE `privilige`= 2";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $user) {
+								$id = $user['id'];
+								$name = $user['name'];
+								
+								print "
+								<tr>
+									<th>$id</th>
+									<td>$name</td>
+									<td><a class='btn btn-danger btn-lg toggle-modal add' data-target='#myModal' data-toggle='modal' >
+									<i class='glyphicon glyphicon-plus'></i>
+									Ban
+							</a></td>
+								";
+								
+								
+							}
+						?>
+						
+						
+						
+						
+						
+						
+					</tbody>
+					
+					
+					
+					
+					
+				</table>
+				
+				
+				
+				
+				</div>
+			<div class="col-md-6">
+				Banned list(if empty noone has been banned)
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Car #</th>
+							<th>Car name</th>
+							<th>Description</th>
+							<th>Link</th>
+							<th>Edit</th>
+					</thead>
+					<tbody>
+						<?php
+						
+						
+							$query = "SELECT  `id` ,  `name` ,  `privilige` FROM  `user` WHERE  `privilige` =0";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $user) {
+								$id = $user['id'];
+								$name = $user['name'];
+								
+								print "
+								<tr>
+									<th>$id</th>
+									<td>$name</td>
+									<td><a class='btn btn-danger btn-lg toggle-modal add' data-target='#myModal' data-toggle='modal' >
+									<i class='glyphicon glyphicon-plus'></i>
+									 UN- Ban
+							</a></td>
+								";
+								
+								
+							}
+						?>
+						
+						
+						
+						
+						
+						
+					</tbody>
+					
+					
+					
+					
+					
+				</table>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>
 	</body>
 	<footer>
 	</footer>

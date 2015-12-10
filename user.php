@@ -2,16 +2,17 @@
 <html lang="en">
 	<head>
 		<?php
-			include("/php/config.php");
-			include("/includes/head.php");
-			//include 'includes/head.php';	//tempfix
+			include("php/config.php");
+			include("includes/head.php");
+			//include 'includes/head.php';	//tempfix		
+
 		?>
 	</head>
 
 
 	<body>
 		<?php
-			include('includes/UserNavBar.php');
+			include('includes/UserNavBar.php');			
 		?>
 
 		<div>
@@ -106,7 +107,7 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->		
 		<?php
-			include("/includes/scripts.php");
+			include("../includes/scripts.php");
 		?>
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {

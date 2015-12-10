@@ -21,14 +21,12 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">						
 						<?php
-							if (isset($_SESSION['privilige'])) {
-								if ($_SESSION['privilige'] === 1) {
-									print "<li><a href=\"/admin/admin.php\">Admin</a></li>";
-								}
-							}
+							if ($_SESSION['privilige'] === 1) {
+								print "<li><a href=\"/admin/admin.php\">Admin</a></li>";
+							}													
 						?>
 					</ul>
-					<a class="nav navbar-nav navbar-right" href="/"> Log Out </a>
+					<a class="nav navbar-nav navbar-right" href="php/logout.php"> Log Out </a>
 				</div><!-- /.navbar-collapse -->
 			</div>
 			<div class="col-md-9"> 
@@ -111,7 +109,7 @@
 						<h4 class="modal-title" style="text-align: center"> <i class="glyphicon glyphicon-user"></i>Register</h4> 
 					</div>
 					<div class="modal-body">
-						<form>
+						<form action="php/register.php" method="post">
 							<?php 
 								include 'register.php';
 							?>

@@ -24,8 +24,11 @@
 	<body>
 	
 		<?php
-	include '../includes/head.php';
+	
 		include("../includes/AdminNavBar.php");
+		include("../php/config.php");
+			include("../php/db.php");			
+			include("../includes/head.php");
 	?>
 			<div class="container">
 				car info below....
@@ -33,22 +36,54 @@
 					<thead>
 						<tr>
 							<th>Car #</th>
-							<th>Edit</th>
 							<th>Car name</th>
-							<th>Car type</th>
-							<th>Min- max price</th>
-							<th>Details</th>
-							<th>link</th>
+							<th>Link</th>
+							<th>Description</th>
+							<th>Edit</th>
 					</thead>
 					<tbody>
-						<tr>
+						<!--<tr>
 							<th>1</th>
 							<td><a></a></td>
 							<td>toyota corolla</td>
 							<td>compact</td>
 							<td>$1650</td>
 							<td>Great exterior</td>
-						</tr>
+						</tr>-->
+						
+						
+						<?php
+						
+						
+							$query = "SELECT * FROM car WHERE 1 ";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $car) {
+								$id = $car['id'];
+								$name = $car['name'];
+								$link = $car['link'];
+								$description = $car['description'];
+								print "
+								<tr>
+									<th class='col-xs-12 col-sm-1'>$id</th>
+									<td class='col-xs-12 col-sm-2'>$name</td>									
+									<td class='col-xs-12 col-sm-2'><a class='btn btn-default' href='$link' target='_blank' role='button'>Link</a></td>
+									
+									<td class='col-xs-12 col-sm-5'>$description</td>
+									<td class='col-xs-12 col-sm-2'><a class='btn btn-primary btn-sm toggle-modal add' data-target='#myModal' data-toggle='modal' >
+									<i class='glyphicon glyphicon-plus'></i>
+									edit car info
+							</a></td>
+								";
+								
+								
+							}
+						?>
+						
+						
+						
+						
 						
 						
 					</tbody>
