@@ -18,9 +18,9 @@
 	<body>
 			
 		<?php
-    include 'includes/AdminNavBar.php';
-    ?>
-			
+	include '../includes/head.php';
+		include("../includes/AdminNavBar.php");
+	?>
 <div class="col-md-8"> 
 	<form>
 				Edit Questions

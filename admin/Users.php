@@ -2,12 +2,13 @@
 <html> 
 	<head>
 		<?php
-			include("php/config.php");				
-			include("includes/head.php");	
+			include("../php/config.php");				
+			include("../includes/head.php");	
 		?>
 	</head>
 	<?php
-		include('includes/AdminNavBar.php');
+	
+		include("../includes/AdminNavBar.php");
 	?>
 	<body>
 	</body>

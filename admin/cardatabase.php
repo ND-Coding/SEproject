@@ -24,8 +24,9 @@
 	<body>
 	
 		<?php
-    include 'includes/AdminNavBar.php';
-    ?>
+	include '../includes/head.php';
+		include("../includes/AdminNavBar.php");
+	?>
 			<div class="container">
 				car info below....
 				<table class="table table-hover">

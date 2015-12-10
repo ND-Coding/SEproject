@@ -93,7 +93,7 @@
 							Email :<input type="text" id="email" name="email"/><br>
 							Password :<input type="text" id="password" name="password"/><br>
 							<input type="submit" name="submit" id="submit" value="Submit" />
-							<a class="btn-lg" href="user.php">CUT TO USER</a>
+							<a class="btn-lg" href="admin/Users.php">CUT TO USER</a>
 						</form>
 					</div>
 				</div>
