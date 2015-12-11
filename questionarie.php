@@ -21,7 +21,7 @@
 				print "You are not authorized to view this content.";
 			die();
 		}
-		include("includes/AdminNavBar.php");
+		
 		?>
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
@@ -31,8 +31,8 @@
 						<tr>
 							<th>Question #</th>
 							<th>Question Descriptions</th>
-							<th>Required</th>
-							<th>Change</th>
+							<th>Answer</th>
+							
 							
 					</thead>
 					<tbody>
@@ -58,8 +58,8 @@
 								
 								
 							}
-							
-							$query = "SELECT  
+							print"<h3>REQUIRED Queations (User must awnser these questions)</h3>";
+							$query = "SELECT * 
 									FROM  `question` 
 									WHERE  `required` =0 &&  `active` =1";
 									$stm = $dbh->query($query);
