@@ -12,9 +12,14 @@
 			
 		<?php
 			include("../includes/AdminNavBar.php");
-		?>
+			
+			
+			if(isset($_POST['submit'])){
+				
+			}
+		?>		
 <div class="col-md-8"> 
-	<form>
+	<form action=<?= $_SERVER['SCRIPT_FILENAME']?> method="post">
 				Edit Questions
 				<table class="table table-hover">
 					<thead>
@@ -22,7 +27,7 @@
 							<th>Question #</th>
 							<th>Question Descriptions</th>
 							<th>Required</th>
-							<th>Change</th>
+							<th>Active</th>
 							
 					</thead>
 					<tbody>
@@ -37,19 +42,19 @@
 								print "
 								<tr>
 									<th>$id</th>
-									<td><input type='text' name='' placeholder='$question' id='question[$id]'/></td>
+									<td><input type='text' placeholder='$question' name='question[$id]'/></td>
 								";
 								if ($question['required'] === "1"){
-									print "<td><input type='checkbox' checked = 'true' id='required[$id]'/></td>";
+									print "<td><input type='checkbox' checked = 'true' name='required[$id]'/></td>";
 								} else {
-									print "<td><input type='checkbox' id='required[$id]'/></td>";
+									print "<td><input type='checkbox' name='required[$id]'/></td>";
 								}
 								if ($question['active'] === "1"){
-									print "<td><input type='checkbox' checked = 'true' id='active[$id]'/></td>";
+									print "<td><input type='checkbox' checked = 'true' name='active[$id]'/></td>";
 								} else {
-									print "<td><input type='checkbox' id='active[$id]'/></td>";
+									print "<td><input type='checkbox' name='active[$id]'/></td>";
 								}
-								print "								
+								print "	
 									<td><input type='submit' /></td>
 									</tr>
 								";
