@@ -19,9 +19,8 @@
 			include 'includes/UserNavBar.php';
 			if($_SESSION['privilige'] != 2 ) {
 				print "You are not authorized to view this content.";
-			die();
-		}
-		
+				die();
+			}
 		?>
 		<div class="container">
 		<header><h1>Questionarie page </h1></header>
@@ -33,8 +32,7 @@
 							<th>Question #</th>
 							<th>Question Descriptions</th>
 							<th>Answer</th>
-							
-							
+						</tr>
 					</thead>
 					<tbody>
 			<?php
