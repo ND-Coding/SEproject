@@ -16,7 +16,7 @@
         <li class="active"><a href="/~dallingn1/2014fall/projects/admin/cardatabase.php">Modify Cars </a></li>
         <li><a href="/~dallingn1/2014fall/projects/admin/QuestionMng.php">Modify Questions</a></li>
 		<li><a href="/~dallingn1/2014fall/projects/admin/Users.php">Ban User</a></li>
-		<li><a class="nav navbar-nav navbar-right" href="php/logout.php"> Log Out </a></li>
+		<li><a class="nav navbar-nav navbar-right" href="/~dallingn1/2014fall/projects/php/logout.php"> Log Out </a></li>
       </ul>
 	  
     </div><!-- /.navbar-collapse -->
