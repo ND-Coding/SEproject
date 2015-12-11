@@ -54,8 +54,8 @@
 								
 								
 							}
-							print"<h3>Optional Queations (User must awnser these questions)</h3>";
-							$query = "SELECT * 
+							
+							$query = "SELECT  
 									FROM  `question` 
 									WHERE  `required` =0 &&  `active` =1";
 									$stm = $dbh->query($query);

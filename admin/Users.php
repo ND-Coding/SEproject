@@ -11,7 +11,7 @@
 		print "You are not authorized to view this content.";
 		die();
 		}
-		include("../includes/AdminNavBar.php");
+		
 	?>
 		
 	</head>
