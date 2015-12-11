@@ -18,6 +18,7 @@
 		$_SESSION['user'] = $result['email'];
 		$_SESSION['privilige'] = $result['privilige'];
 		$_SESSION['name'] = $result['name'];
+		$_SESSION['id'] = $result['id'];
 		if ($_SESSION['privilige'] === "2"){
 			header("Location: ../user.php");
 		}		
