@@ -12,7 +12,12 @@
 
 	<body>
 		<?php
-			include('includes/UserNavBar.php');			
+			include('includes/UserNavBar.php');	
+			if($_SESSION['privilige'] != 2) {
+			print "You are not authorized to view this content.";
+			die();
+		}
+		include("../includes/AdminNavBar.php");
 		?>
 
 		<div>

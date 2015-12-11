@@ -11,13 +11,26 @@
 	<body>
 			
 		<?php
+<<<<<<< HEAD
+		include("../includes/AdminNavBar.php");
+		if($_SESSION['privilige'] != 1) {
+		print "You are not authorized to view this content.";
+		die();
+		}
+		include("../includes/AdminNavBar.php");
+=======
 			include("../includes/AdminNavBar.php");
+<<<<<<< HEAD
 			
 			
 			if(isset($_POST['submit'])){
 				
 			}
 		?>		
+=======
+>>>>>>> origin/ver_two
+		?>
+>>>>>>> origin/ver_two
 <div class="col-md-8"> 
 	<form action=<?= $_SERVER['SCRIPT_FILENAME']?> method="post">
 				Edit Questions
