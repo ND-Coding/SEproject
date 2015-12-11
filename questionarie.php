@@ -13,7 +13,9 @@
 		<?php
 			include '../includes/UserNavBar.php';
 			if($_SESSION['privilige'] != 2 ) {
-				print $_SESSION['privilige'];
+				if(!isset($_SESSION['privilige'])){
+					print "Something isn't getting set";
+				}
 				print "You are not authorized to view this content.";
 			die();
 		}
