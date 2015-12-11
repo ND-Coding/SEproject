@@ -4,8 +4,28 @@
 		<?php
 			
 			include("../php/config.php");
+			if(!isset($_SESSION['privilige'])){
+					print "Something isn't getting set \n";
+				}
+				else {
+					print "everything looks good \n";
+				}
 			include("../php/db.php");			
+			
+			if(!isset($_SESSION['privilige'])){
+					print "Something isn't getting set \n";
+				}
+				else {
+					print "everything looks good \n";
+				}
 			include("../includes/head.php");
+			
+			if(!isset($_SESSION['privilige'])){
+					print "Something isn't getting set \n";
+				}
+				else {
+					print "everything looks good \n";
+				}
 		
 		?>
 	</head>
