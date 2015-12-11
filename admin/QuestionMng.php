@@ -18,7 +18,11 @@
 		}
 			
 		if(isset($_POST['submit'])){
+			$query_ids = "SELECT id FROM questions";
+			$stm = $dbh->query($query_ids);
+			$question_ids = $stm->fetchAll();
 			
+			print_r($_POST);
 		}
 		?>		
 <div class="col-md-8"> 
