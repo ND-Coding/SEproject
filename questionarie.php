@@ -3,11 +3,9 @@
 	<head>
 		<?php
 			
-			if(include("php/config.php")){
-				print "This is getting included <br>";
-			} else {
-				print "Config if not being included <br>";
-			}
+			include("php/config.php");
+
+			
 			
 			include("php/db.php");			
 			
