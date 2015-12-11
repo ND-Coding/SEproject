@@ -2,8 +2,11 @@
 <html lang="en"> 
 	<head>
 		<?php
-			include("php/config.php");				
-			include("includes/head.php");		
+			
+			include("../php/config.php");
+			include("../php/db.php");			
+			include("../includes/head.php");
+		
 		?>
 	</head>
 	<body>
@@ -18,30 +21,63 @@
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
 		<form>
-			<ul>
-				<li> 
-					<p>Question 1</p>
-					<input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 2</p>
-					<input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 3</p>
-					<input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 4</p>
-					<input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 5</p>
-					<input type= "type" name="full name"/> <br>
-				</li>
-			</ul>
+			<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Question #</th>
+							<th>Question Descriptions</th>
+							<th>Required</th>
+							<th>Change</th>
+							
+					</thead>
+					<tbody>
+			<?php
+						
+						print"<h3>REQUIRED Queations (User must awnser these questions)</h3>";
+							$query = "SELECT * 
+									FROM  `question` 
+									WHERE  `required` =1 &&  `active` =1";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $question) {
+								$id = $question['id'];
+								$require = $question['required'];
+								$description= $question['description'];
+								print "
+								<tr>
+									<th class='col-xs-12 col-sm-1'>$id</th>
+									<td class='col-xs-12 col-sm-5'>$description</td>
+									<td><input type='text' id ='$id' name='anwser'/></td>
+								";
+								
+								
+							}
+							print"<h3>Optional Queations (User must awnser these questions)</h3>";
+							$query = "SELECT * 
+									FROM  `question` 
+									WHERE  `required` =0 &&  `active` =1";
+									$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+									foreach ($results as $question) {
+								$id = $question['id'];
+								$description= $question['description'];
+								print "
+								<tr>
+									<th class='col-xs-12 col-sm-1'>$id</th>
+									<td class='col-xs-12 col-sm-5'>$description</td>
+									<td><input type='text' id ='$id' name='anwser'/></td>
+								
+								";
+								
+								
+							}
+						?>
+						
+					</tbody></table>
 			<input type="submit" name="submit" id="submit" value="Submit" />
-			<a class="btn-lg" href="user.php">CUT TO USER</a>
+			
 		</form>
 	</body>
 </html>
