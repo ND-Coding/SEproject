@@ -89,7 +89,7 @@
 						<p>Enter login credentials</p>
 						<form action="php/login.php" method="post">
 							Email :<input type="text" id="email" name="email"/><br>
-							Password :<input type="text" id="password" name="password"/><br>
+							Password :<input type="password" id="password" name="password"/><br>
 							<input type="submit" name="submit" id="submit" value="Submit" />
 							<a class="btn-lg" href="admin/Users.php">CUT TO USER</a>
 						</form>
