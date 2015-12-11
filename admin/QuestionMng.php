@@ -24,9 +24,9 @@
 			
 			print_r($_POST);
 		}
-		?>		
+		?>
 <div class="col-md-8"> 
-	<form action=<?= $_SERVER['SCRIPT_FILENAME']?> method="post">
+	<form action="QuestionMng.php" method="post">
 				Edit Questions
 				<table class="table table-hover">
 					<thead>
