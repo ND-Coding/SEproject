@@ -50,7 +50,7 @@
 								$require = $question['required'];
 								$description= $question['description'];
 								print "
-								<tr>
+								<tr class='table-danger'>
 									<th class='col-xs-12 col-sm-1'>$id</th>
 									<td class='col-xs-12 col-sm-5'>$description</td>
 									<td><input type='text' id ='$id' name='anwser'/></td>
@@ -58,7 +58,7 @@
 								
 								
 							}
-							print"<h3>REQUIRED Queations (User must awnser these questions)</h3>";
+							
 							$query = "SELECT * 
 									FROM  `question` 
 									WHERE  `required` =0 &&  `active` =1";
@@ -69,7 +69,7 @@
 								$id = $question['id'];
 								$description= $question['description'];
 								print "
-								<tr>
+								<tr >
 									<th class='col-xs-12 col-sm-1'>$id</th>
 									<td class='col-xs-12 col-sm-5'>$description</td>
 									<td><input type='text' id ='$id' name='anwser'/></td>
