@@ -9,6 +9,11 @@
 	<body>
 		<?php
 			include '../includes/UserNavBar.php';
+			if($_SESSION['privilige'] != 2) {
+			print "You are not authorized to view this content.";
+			die();
+		}
+		include("../includes/AdminNavBar.php");
 		?>
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>

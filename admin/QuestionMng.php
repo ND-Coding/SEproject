@@ -12,6 +12,11 @@
 			
 		<?php
 		include("../includes/AdminNavBar.php");
+		if($_SESSION['privilige'] != 1) {
+		print "You are not authorized to view this content.";
+		die();
+		}
+		include("../includes/AdminNavBar.php");
 		?>
 <div class="col-md-8"> 
 	<form>

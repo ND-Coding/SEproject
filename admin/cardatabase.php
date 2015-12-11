@@ -27,8 +27,13 @@
 	
 		include("../includes/AdminNavBar.php");
 		include("../php/config.php");
-			include("../php/db.php");			
-			include("../includes/head.php");
+		include("../php/db.php");			
+		include("../includes/head.php");
+		if($_SESSION['privilige'] != 1) {
+		print "You are not authorized to view this content.";
+		die();
+		}
+		include("../includes/AdminNavBar.php");
 	?>
 			<div class="container">
 				car info below....
