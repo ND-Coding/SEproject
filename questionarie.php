@@ -3,39 +3,23 @@
 	<head>
 		<?php
 			
-			include("../php/config.php");
-			if(!isset($_SESSION['privilige'])){
-					print "Something isn't getting set \n";
-				}
-				else {
-					print "everything looks good \n";
-				}
+			if(include("../php/config.php")){
+				print "This is getting included <br>";
+			} else {
+				print "Config if not being included <br>";
+			}
+			
 			include("../php/db.php");			
 			
-			if(!isset($_SESSION['privilige'])){
-					print "Something isn't getting set \n";
-				}
-				else {
-					print "everything looks good \n";
-				}
 			include("../includes/head.php");
 			
-			if(!isset($_SESSION['privilige'])){
-					print "Something isn't getting set \n";
-				}
-				else {
-					print "everything looks good \n";
-				}
-		
+			
 		?>
 	</head>
 	<body>
 		<?php
 			include '../includes/UserNavBar.php';
 			if($_SESSION['privilige'] != 2 ) {
-				if(!isset($_SESSION['privilige'])){
-					print "Something isn't getting set";
-				}
 				print "You are not authorized to view this content.";
 			die();
 		}
