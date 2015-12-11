@@ -11,12 +11,16 @@
 	<body>
 			
 		<?php
+<<<<<<< HEAD
 		include("../includes/AdminNavBar.php");
 		if($_SESSION['privilige'] != 1) {
 		print "You are not authorized to view this content.";
 		die();
 		}
 		include("../includes/AdminNavBar.php");
+=======
+			include("../includes/AdminNavBar.php");
+>>>>>>> origin/ver_two
 		?>
 <div class="col-md-8"> 
 	<form>
@@ -31,30 +35,6 @@
 							
 					</thead>
 					<tbody>
-						<!--
-						<tr>
-							<th>1</th>
-							<td><input type="text" name="Question 1 :....." placeholder="Question 1" /></td>
-							<td><input type="checkbox" id="required"/></td>
-							<td><input type="submit" /></td>
-							
-							
-						</tr>
-						<tr>
-							<th>2</th>
-							<td><input type="text" name="Question 2: ....." placeholder="Question 2" /></td>
-							<td><input type="checkbox" id="required"/></td>
-							<td><input type="submit" /></td>
-							
-						</tr>
-						<tr>
-							<th>3</th>
-							<td><input type="text" name="Question 3:....." placeholder="Question 3" /></td>
-							<td><input type="checkbox" id="required"/></td>
-							<td><input type="submit" /></td>
-							
-						</tr>
-						-->
 						<?php
 							$query = "SELECT * FROM question WHERE active = 1";
 							$stm = $dbh->query($query);
@@ -62,16 +42,21 @@
 							
 							foreach ($results as $question) {
 								$id = $question['id'];
-								$name = $question['description'];
+								$question = $question['description'];
 								print "
 								<tr>
 									<th>$id</th>
-									<td><input type='text' name='' placeholder='$name' /></td>
+									<td><input type='text' name='' placeholder='$question' id='question[$id]'/></td>
 								";
 								if ($question['required'] === "1"){
-									print "<td><input type='checkbox' checked = 'true' id='required'/></td>";
+									print "<td><input type='checkbox' checked = 'true' id='required[$id]'/></td>";
 								} else {
-									print "<td><input type='checkbox' id='required'/></td>";
+									print "<td><input type='checkbox' id='required[$id]'/></td>";
+								}
+								if ($question['active'] === "1"){
+									print "<td><input type='checkbox' checked = 'true' id='active[$id]'/></td>";
+								} else {
+									print "<td><input type='checkbox' id='active[$id]'/></td>";
 								}
 								print "								
 									<td><input type='submit' /></td>
