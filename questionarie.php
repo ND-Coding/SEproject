@@ -37,7 +37,7 @@
 					<tbody>
 			<?php
 						
-						print"<h3>REQUIRED Queations (User must awnser these questions)</h3>";
+						print"<h3>REQUIRED Questions are in red  (User must awsner these questions)</h3>";
 							$query = "SELECT * 
 									FROM  `question` 
 									WHERE  `required` =1 &&  `active` =1";
@@ -49,7 +49,7 @@
 								$require = $question['required'];
 								$description= $question['description'];
 								print "
-								<tr style=' background-color: 	#FA8072;'>
+								<tr style=' background-color: 	#FAEBD7;'>
 									<th >$id</th>
 									<td >$description</td>
 									<td><input type='text' id ='$id' name='anwser'/></td>
