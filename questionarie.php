@@ -23,6 +23,7 @@
 		}
 		
 		?>
+		<div class="container">
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
 		<form>
@@ -50,9 +51,9 @@
 								$require = $question['required'];
 								$description= $question['description'];
 								print "
-								<tr class='table-danger'>
-									<th class='col-xs-12 col-sm-1'>$id</th>
-									<td class='col-xs-12 col-sm-5'>$description</td>
+								<tr style=' background-color: 	#FA8072;'>
+									<th >$id</th>
+									<td >$description</td>
 									<td><input type='text' id ='$id' name='anwser'/></td>
 								";
 								
@@ -83,5 +84,6 @@
 					</tbody></table>
 			<input type="submit" name="submit" id="submit" value="Submit" />			
 		</form>
+		</div>
 	</body>
 </html>
