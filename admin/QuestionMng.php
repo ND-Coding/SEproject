@@ -11,26 +11,16 @@
 	<body>
 			
 		<?php
-<<<<<<< HEAD
 		include("../includes/AdminNavBar.php");
 		if($_SESSION['privilige'] != 1) {
-		print "You are not authorized to view this content.";
-		die();
+			print "You are not authorized to view this content.";
+			die();
 		}
-		include("../includes/AdminNavBar.php");
-=======
-			include("../includes/AdminNavBar.php");
-<<<<<<< HEAD
 			
+		if(isset($_POST['submit'])){
 			
-			if(isset($_POST['submit'])){
-				
-			}
+		}
 		?>		
-=======
->>>>>>> origin/ver_two
-		?>
->>>>>>> origin/ver_two
 <div class="col-md-8"> 
 	<form action=<?= $_SERVER['SCRIPT_FILENAME']?> method="post">
 				Edit Questions
@@ -67,16 +57,10 @@
 								} else {
 									print "<td><input type='checkbox' name='active[$id]'/></td>";
 								}
-								print "	
-									<td><input type='submit' /></td>
-									</tr>
-								";
-								
 							}
 						?>
 					</tbody>
-					
-					
+					<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Changes</button>					
 		</form>
 					
 					
