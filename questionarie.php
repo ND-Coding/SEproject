@@ -3,27 +3,27 @@
 	<head>
 		<?php
 			
-			if(include("/php/config.php")){
+			if(include("php/config.php")){
 				print "This is getting included <br>";
 			} else {
 				print "Config if not being included <br>";
 			}
 			
-			include("/php/db.php");			
+			include("php/db.php");			
 			
-			include("/includes/head.php");
+			include("includes/head.php");
 			
 			
 		?>
 	</head>
 	<body>
 		<?php
-			include '../includes/UserNavBar.php';
+			include 'includes/UserNavBar.php';
 			if($_SESSION['privilige'] != 2 ) {
 				print "You are not authorized to view this content.";
 			die();
 		}
-		include("../includes/AdminNavBar.php");
+		include("includes/AdminNavBar.php");
 		?>
 		<header><h1>Questionarie page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
@@ -83,8 +83,7 @@
 						?>
 						
 					</tbody></table>
-			<input type="submit" name="submit" id="submit" value="Submit" />
-			
+			<input type="submit" name="submit" id="submit" value="Submit" />			
 		</form>
 	</body>
 </html>
