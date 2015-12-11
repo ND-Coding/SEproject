@@ -8,7 +8,18 @@
 	</head>
 	<body>
 		<?php
-			include ("includes/AdminNavBar.php");
+		if($_SESSION['privilige'] === 1) {
+		include ("includes/AdminNavBar.php");
+		}
+		else if($_SESSION['privilige'] === 2)
+		{
+		include ("includes/UserNavBar.php")	
+		}
+		else
+		{
+			print "You are not authorized to view this content.";
+			die();
+		}
 		?>
 		
 		<header>
