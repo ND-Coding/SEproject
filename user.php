@@ -4,6 +4,8 @@
 		<?php
 			include("php/config.php");
 			include("includes/head.php");
+			include("php/db.php");
+
 			//include 'includes/head.php';	//tempfix		
 
 		?>
@@ -31,6 +33,17 @@
 						<th>From</th>
 					</thead>
 					<tbody>
+						
+						<?php
+							$id = $_SESSION['id'];
+							$query = "SELECT * FROM message WHERE user_id = $id";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							print_r($results);
+						?>
+						
+						<!--
 						<tr>
 							<th>1</th>
 							<td>hi</td>
@@ -46,6 +59,7 @@
 							<td>thanks</td>
 							<td>Client</td>
 						</tr>
+						-->
 					</tbody>
 				</table>
 				<div class="container "style="center">
