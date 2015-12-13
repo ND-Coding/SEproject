@@ -40,7 +40,28 @@
 							$stm = $dbh->query($query);
 							$results = $stm->fetchAll();
 							
-							print_r($results);
+							foreach($results as $message){
+								if ($message['from_admin'] == 1){
+									$background = "'bg-warning'";
+									$from = "Admin";
+								} else {
+									$background = "'bg-success'";
+									$from = $_SESSION['name'];
+								}
+								
+								
+								
+								$id = $message['id'];
+								$content = $message['content'];
+								
+								print "
+									<tr class = $background>
+										<th>$id</th>
+										<td>$content</td>
+										<td>$from</td>
+									</tr>
+								";
+							}
 						?>
 						
 						<!--
