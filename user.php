@@ -15,7 +15,7 @@
 	<body>
 		<?php
 			include('includes/UserNavBar.php');	
-			if($_SESSION['privilige'] != 2 || $_SESSION['privilige'] != 1) {
+			if($_SESSION['privilige'] > 2 || $_SESSION['privilige'] < 1) {
 				print "You are not authorized to view this content.";
 				die();
 			}
