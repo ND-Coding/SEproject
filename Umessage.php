@@ -23,6 +23,5 @@ VALUES (NULL, '$id', '0','$content', CURRENT_TIMESTAMP)";
 if(!$dbh->query($query)){
 	var_dump( $dbh->errorinfo());
 }else {	
-								
-	header("Location: /~dallingn1/2014fall/projects/user.php");
+	;
 }?>
