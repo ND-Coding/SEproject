@@ -15,11 +15,13 @@
 	<body>
 		<?php
 			include('includes/UserNavBar.php');	
-			if($_SESSION['privilige'] != 2) {
-			print "You are not authorized to view this content.";
-			die();
-		}
-		include("../includes/AdminNavBar.php");
+			if($_SESSION['privilige'] != 2 || $_SESSION['privilige'] != 1) {
+				print "You are not authorized to view this content.";
+				die();
+			}
+			if($_SESSION['privilige'] === 1){
+				include("../includes/AdminNavBar.php");
+			}
 		?>
 
 		<div>
