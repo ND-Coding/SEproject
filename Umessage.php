@@ -8,8 +8,8 @@
 		<input type="submit" name="submit" id="submit" value="Submit" />								
 	</form>	
 		<?php
-include("../php/config.php");
-include("../php/db.php");
+include("/~dallingn1/2014fall/projects/php/config.php");
+include("/~dallingn1/2014fall/projects/php/db.php");
 $content = $_POST['content'];
 $id = $_SESSION['id'];
 //print"$nid";
@@ -24,5 +24,5 @@ if(!$dbh->query($query)){
 	var_dump( $dbh->errorinfo());
 }else {	
 								
-	header("Location: ../user.php");
+	header("Location: /~dallingn1/2014fall/projects/user.php");
 }?>
