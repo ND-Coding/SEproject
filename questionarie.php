@@ -23,7 +23,7 @@
 			}
 		?>
 		<div class="container">
-		<header><h1>Questionarie page </h1></header>
+		<header><h1>Questionnaire page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
 		<form>
 			<table class="table table-hover">

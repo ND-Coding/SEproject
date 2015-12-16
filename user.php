@@ -26,7 +26,7 @@
 
 		<div>
 			<div class="container "style="center">
-					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionarie</a>
+					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionnaire</a>
 					<a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a>
 					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
 				</div>
