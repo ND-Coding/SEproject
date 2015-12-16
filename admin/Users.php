@@ -28,8 +28,6 @@
 						<tr>
 							<th>User id</th>
 							<th>Email</th>
-							
-							<th>Description</th>
 						
 					</thead>
 					<tbody>
@@ -80,11 +78,9 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Car #</th>
-							<th>Car name</th>
-							<th>Description</th>
-							<th>Link</th>
-							<th>Edit</th>
+							<th>User id</th>
+							<th>Email</th>
+
 					</thead>
 					<tbody>
 						<?php
