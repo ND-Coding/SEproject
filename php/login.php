@@ -20,7 +20,7 @@
 		$_SESSION['name'] = $result['name'];
 		$_SESSION['id'] = $result['id'];
 		if ($_SESSION['privilige'] === "2"){
-			header("Location: ../user.php");
+			header("Location: /user.php");
 		}		
 		if($_SESSION['privilige'] === "1"){
 			header("Location: ../admin/admin.php");

@@ -13,7 +13,7 @@
 		}
 		else if($_SESSION['privilige'] === 2)
 		{
-		include ("includes/UserNavBar.php")	
+		include ("includes/UserNavBar.php")	;
 		}
 		else
 		{

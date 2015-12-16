@@ -29,14 +29,15 @@
 					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
 				</div>
 			<div class="container"> 
+				
 				View messages
 				<table class="table table-hover">
 					<thead>
-						<tr>
-						<th>Message #</th>
+						<tr>						
 						<th>User message log</th>
 						<th>From</th>
 						<th>Time</th>
+						</tr>
 					</thead>
 					<tbody>
 						
@@ -62,10 +63,9 @@
 								
 								print "
 									<tr class = $background>
-										<th>$id</th>
 										<td>$content</td>
 										<td>$from</td>
-										<td></td>
+										<td>$time</td>
 									</tr>
 								";
 							}
@@ -73,8 +73,19 @@
 						
 					</tbody>
 				</table>
-				gugh
+				
 			</div>
+			<div class="container">
+				<?php 
+				include 'Umessage.php';
+				
+				?>
+				
+				
+				
+				
+			</div>
+			
 		</div>		
 		<div class="modal fade" id="myModal"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
 			<div class="modal-dialog">

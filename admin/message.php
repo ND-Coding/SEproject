@@ -1,10 +1,4 @@
 <form action="../php/ADmessage.php" method="post">
-		
-		
-		
-		
-		
-		
 		Message : <?php 
 		
 		nid == $nid;

@@ -1,4 +1,13 @@
-<?php
+<form action="" method="post">
+		Message : <?php 
+		
+		$id= $_SESSION['id'];
+		print" $id ";
+		?> <br>
+		<textarea type="type" name="content" cols="40" rows="10"></textarea>
+		<input type="submit" name="submit" id="submit" value="Submit" />								
+	</form>	
+		<?php
 include("../php/config.php");
 include("../php/db.php");
 $content = $_POST['content'];
@@ -16,4 +25,4 @@ if(!$dbh->query($query)){
 }else {	
 								
 	header("Location: ../user.php");
-}
+}?>
