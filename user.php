@@ -23,14 +23,20 @@
 		?>
 
 		<div>
+			<div class="container "style="center">
+					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionarie</a>
+					<a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a>
+					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
+				</div>
 			<div class="container"> 
 				View messages
 				<table class="table table-hover">
 					<thead>
 						<tr>
-						<th>message #</th>
+						<th>Message #</th>
 						<th>User message log</th>
 						<th>From</th>
+						<th>Time</th>
 					</thead>
 					<tbody>
 						
@@ -50,7 +56,7 @@
 								}
 								
 								
-								
+								$time=$message['time_sent'];
 								$id = $message['id'];
 								$content = $message['content'];
 								
@@ -59,35 +65,15 @@
 										<th>$id</th>
 										<td>$content</td>
 										<td>$from</td>
+										<td></td>
 									</tr>
 								";
 							}
 						?>
 						
-						<!--
-						<tr>
-							<th>1</th>
-							<td>hi</td>
-							<td>Client</td>
-						</tr>
-						<tr>
-							<th>2</th>
-							<td>hello</td>
-							<th>User</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<td>thanks</td>
-							<td>Client</td>
-						</tr>
-						-->
 					</tbody>
 				</table>
-				<div class="container "style="center">
-					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionarie</a>
-					<a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a>
-					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
-				</div>
+				gugh
 			</div>
 		</div>		
 		<div class="modal fade" id="myModal"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>

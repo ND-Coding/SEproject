@@ -52,15 +52,15 @@
 						        <div class='panel-body'>
         	
 							
-							
-							
+							<div class='row'>
+							<div class='col-lg-8'>
 							View messages
 				<table class='table table-hover'>
 					<thead>
 						<tr>
-						<th>message #</th>
 						<th>User message log</th>
 						<th>From</th>
+						<th>time</th>
 					</thead>
 					<tbody>
 						";
@@ -76,30 +76,44 @@
 									$from = "Admin";
 								} else {
 									$background = "'bg-success'";
-									$from = $nameid;
+									$from = $name;
 								}
 								
 								
 								
-								$id = $message['id'];
+								$date = $message['time_sent'];
 								$content = $message['content'];
 								
 								print "
-									<tr class = $background>
-										<th>$id</th>
+									<tr class = $background>										
 										<td>$content</td>
 										<td>$from</td>
+										<td>$date</td>
 									</tr>
 								";
 							}
-						   $nid= $nameid;
+						  
 					print"
 					</tbody>
-				</table>
-							<hr />
+				</table></div>
+				<div class='col-lg-4'>
+				<h3>message</h3>
+				"; 
+				$nid= $id;
+				
+								
+								include 'message.php';
+								
+								
+								
+								print"
+				
+				</div>
+				</div>
+							<!--<hr />
 							<a class='btn btn-primary btn-lg toggle-modal add' data-target='#Register' data-toggle='modal' >
 							Send a Message $nameid
-						</a>
+						</a>-->
 													
 						        	</div>
 						        <div class='panel-footer'>
