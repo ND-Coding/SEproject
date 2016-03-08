@@ -1,9 +1,11 @@
 <?php
 include("../php/config.php");
 include("../php/db.php");
+
 $content = $_POST['content'];
 $nid = $_POST['nid'];
 //print"$nid";
+
 
 
 //INSERT INTO `dallingn1_db`.`message` (`id`, `user_id`, `from_admin`, `content`, `time_sent`) 

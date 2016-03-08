@@ -25,126 +25,199 @@
 		?>
 
 		<div>
-			<div class="container "style="center">
-					<a class="btn btn-danger btn-lg " href="questionarie.php">Anwser Questionnaire</a>
-					<a class="btn btn-primary btn-lg toggle-modal add" data-target="#myModal" data-toggle="modal" >Send message</a>
-					<a class="btn-lg btn btn-warning toggle-modal add" data-target="#mydelete" data-toggle="modal" >Delete Account</a>
-				</div>
-			<div class="container"> 
+			
+			<div class="container row"style="center">
 				
-				View messages
-				<table class="table table-hover">
-					<thead>
-						<tr>						
-						<th>User message log</th>
-						<th>From</th>
-						<th>Time</th>
-						</tr>
-					</thead>
-					<tbody>
+			<div class="col-xs-10"style="center">
+			<h2>User Log</h2>
+  					<div class="panel-group">
+						<?php 
+					
+						$user= $_SESSION['name']; 
+						$userid= $_SESSION['id'];	
+						print"
+						Account Name = $user
+						  
+						Account Id = $userid
+						";
+						$query = "SELECT *
+									FROM  user 
+									WHERE  privilige !=1
+									";
+						$stm = $dbh->query($query);
+						$results = $stm->fetchAll();
 						
-						<?php
-							$id = $_SESSION['id'];
-							$query = "SELECT * FROM message WHERE user_id = $id";
+						
+						foreach ($results as $user) {
+							$id = $user['id'];
+							$name= $user['name'];
+							
+							print"
+							 <div class='panel panel-default' id='$id'>
+						      <div class='panel-heading'>
+						        <h4 class='panel-title'>
+						          <a >$name</a>
+						        </h4>
+						      </div>
+						      <div >
+						        <div class='panel-body'>
+        	
+							
+							<div >
+							<div class='col-sm-6'>
+							View messages
+				<div style='height: 300px; overflow: scroll;'>
+					
+					<div >
+						";
+						
+					
+							$query = "SELECT * FROM message WHERE user_id = $id
+							OR  `user_id` =$userid";
 							$stm = $dbh->query($query);
 							$results = $stm->fetchAll();
 							
 							foreach($results as $message){
+								$date = $message['time_sent'];
+								$content = $message['content'];
+								
 								if ($message['from_admin'] == 1){
-									$background = "'bg-warning'";
-									$from = "Admin";
-								} else {
-									$background = "'bg-success'";
-									$from = $_SESSION['name'];
+									$background = "bg-warning'";
+									$fback="'";
+									$from = "Admin said:
+									 $content";
+									$content= $date;
+									$csize="'col-sm-2";
+									$fsize="'col-sm-4";
+									$cwd="'width:25%'";
+									$fwd="'width:75%'";
+									print "
+									<div class = 'row '>										
+										<div class= $csize $background style=$cwd>$content</div>
+										<div class= $fsize $fback style=$fwd >$from</div>
+										
+									</div>
+								";
+									
+								} 
+								elseif ($message['To']== $userid && $message['from_admin'] == 0 && $message['user_id']==$id){
+									$background = "bg-danger'";
+									$fback="'";
+									$from = "$name said: 
+									$content";
+									$content = $date;
+									$csize="'col-sm-2";
+									$fsize="'col-sm-4";
+									$cwd="'width:25%'";
+									$fwd="'width:75%'";
+									print "
+									<div class = 'row '>			
+														
+										<div class= $csize $background style=$cwd>$content</div>
+										<div class= $fsize $fback style=$fwd >$from</div>
+										
+									</div>
+								";
+																		
 								}
 								
 								
-								$time=$message['time_sent'];
-								$id = $message['id'];
-								$content = $message['content'];
-								
-								print "
-									<tr class = $background>
-										<td>$content</td>
-										<td>$from</td>
-										<td>$time</td>
-									</tr>
+								elseif($message['To']==$id   && $message['from_admin'] == 0 && $message['user_id']==$userid) {
+									$background = "'";
+									$fback="bg-success'";
+									$from = $date;
+									$content= "You said: 
+									$content";
+									$csize="'col-sm-4";
+									$fsize="'col-sm-2";
+									$cwd="'width:75%'";
+									$fwd="'width:25%'";
+									print "
+									<div class = 'row '>										
+										<div class= $csize $background style=$cwd>$content</div>
+										<div class= $fsize $fback style=$fwd >$from</div>
+										
+									</div>
 								";
+								}
+								
+								
+								
+								
+								
+								
+								
 							}
-						?>
-						
-					</tbody>
-				</table>
+						  
+					print"
+					</div>
+				</div></div>
+				<div class='col-sm-2'>
+				<h3>message</h3
+				<form action='php/USmessage.php'method='post'>
+				"; 
 				
-			</div>
-			<div class="container">
-				<?php 
-				include 'Umessage.php';
-				
-				?>
-				
-				
-				
-				
-			</div>
 			
-		</div>		
-		<div class="modal fade" id="myModal"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">>
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" style="text-align: center">
-							<i class="glyphicon glyphicon-user"></i>Enter messgae
-						</h4> 
-					</div>
-					<div class="modal-body">
-						<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
-							<h2>My Message</h2>
-							<textarea ng-model="message" cols="40" rows="10"></textarea>
-							<p>
-								<button ng-click="save()">Save</button>
-								<button ng-click="clear()">Clear</button>
-							</p>
-							<p>
-								Number of characters left: <span ng-bind="left()"></span>
-							</p>
-							<script src="myNoteApp.js"></script>
-							<script src="myNoteCtrl.js"></script>
-						</body>
-					</div>
+							$nid= $id;	
+								include 'Umessage.php';
+								print"</form>
+				
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-		<div class="modal fade" id="mydelete"tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" style="text-align: center">
-							<i class="glyphicon glyphicon-user"></i>Enter new car info
-						</h4> 
-					</div>
-					<div class="modal-body">
-						<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
-							<form>
-							Pleases delete my account <a class="btn btn-warning">yes</a>
-							</form>	
-						</body>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->		
+				
+													
+						        	</div>
+						        <div class='panel-footer'>
+						        
+						</div>
+						      </div>
+						    </div>
+							
+							";
+						}
+							
+			      	?>
+        	
+        	
+        	
+  
+</div>
+</div>
+
+<div class='col-xs-2'style="center" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="1100" style="text-align: center;">
+			<h1> Users on PM:</h1> 
+			<div class="container col-xs-2">
+				 <?php
+    
+     $query = "SELECT *
+									FROM  user 
+									WHERE  privilige !=1
+									";
+						$stm = $dbh->query($query);
+						$results = $stm->fetchAll();
+						
+						
+						foreach ($results as $user) {
+							$id = $user['id'];
+							$name= $user['name'];
+							
+							print"
+     
+     
+      <a class='btn col-xs-2' href='#$id'><i class='glyphicon glyphicon-user'></i>$name<span class='sr-only'></a>";
+						}
+      ?>
+				
+				
+			</div>
+			</div>
+</div>
+			
+				
+				
+			
+			
+		</div>			
 		<?php
 			include("../includes/scripts.php");
 		?>
@@ -153,5 +226,8 @@
 				$('#myInput').focus()
 			})
 		</script>
+		<script>
+	$('.collapse').collapse()
+</script>
 	</body>
 </html>

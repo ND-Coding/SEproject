@@ -1,7 +1,7 @@
 <?php
 
-include("../php/config.php");
-include("../php/db.php");
+include("config.php");
+include("db.php");
 
 $name = $_POST['full_name'];
 $password = $_POST['password'];
