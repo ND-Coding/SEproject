@@ -23,6 +23,19 @@
 				include("../includes/AdminNavBar.php");
 			}
 		?>
+		<style>
+			.hideme
+		{
+		    opacity:0;
+		}
+		.affix {
+	       top: 50px;
+	       right: 0px;
+	      text-align: right;
+	  }
+			
+			
+		</style>
 
 		<div>
 			
@@ -42,7 +55,7 @@
 						";
 						$query = "SELECT *
 									FROM  user 
-									WHERE  privilige !=1
+									WHERE  privilige !=1 and id != $userid
 									";
 						$stm = $dbh->query($query);
 						$results = $stm->fetchAll();
@@ -56,7 +69,7 @@
 							 <div class='panel panel-default' id='$id'>
 						      <div class='panel-heading'>
 						        <h4 class='panel-title'>
-						          <a >$name</a>
+						          <a onClick='history.go(0)' >$name</a>
 						        </h4>
 						      </div>
 						      <div >
@@ -64,7 +77,7 @@
         	
 							
 							<div >
-							<div class='col-sm-6'>
+							<div class='col-xs-6'>
 							View messages
 				<div style='height: 300px; overflow: scroll;'>
 					
@@ -87,15 +100,16 @@
 									$from = "Admin said:
 									 $content";
 									$content= $date;
-									$csize="'col-sm-2";
-									$fsize="'col-sm-4";
+									$csize="'col-xs-2";
+									$fsize="'col-xs-4";
 									$cwd="'width:25%'";
 									$fwd="'width:75%'";
 									print "
-									<div class = 'row '>										
+									<div class = 'row '>
+									<div class ='col-xs-12'>										
 										<div class= $csize $background style=$cwd>$content</div>
 										<div class= $fsize $fback style=$fwd >$from</div>
-										
+									</div>	
 									</div>
 								";
 									
@@ -106,16 +120,16 @@
 									$from = "$name said: 
 									$content";
 									$content = $date;
-									$csize="'col-sm-2";
-									$fsize="'col-sm-4";
+									$csize="'col-xs-2";
+									$fsize="'col-xs-4";
 									$cwd="'width:25%'";
 									$fwd="'width:75%'";
 									print "
 									<div class = 'row '>			
-														
+											<div class ='col-xs-12'>				
 										<div class= $csize $background style=$cwd>$content</div>
 										<div class= $fsize $fback style=$fwd >$from</div>
-										
+										</div>
 									</div>
 								";
 																		
@@ -128,15 +142,16 @@
 									$from = $date;
 									$content= "You said: 
 									$content";
-									$csize="'col-sm-4";
-									$fsize="'col-sm-2";
+									$csize="'col-xs-4";
+									$fsize="'col-xs-2";
 									$cwd="'width:75%'";
 									$fwd="'width:25%'";
 									print "
-									<div class = 'row '>										
+									<div class = 'row '>	
+									<div class ='col-xs-12'>										
 										<div class= $csize $background style=$cwd>$content</div>
 										<div class= $fsize $fback style=$fwd >$from</div>
-										
+										</div>
 									</div>
 								";
 								}
@@ -152,7 +167,7 @@
 					print"
 					</div>
 				</div></div>
-				<div class='col-sm-2'>
+				<div class='col-xs-2'>
 				<h3>message</h3
 				<form action='php/USmessage.php'method='post'>
 				"; 
@@ -184,14 +199,15 @@
 </div>
 </div>
 
-<div class='col-xs-2'style="center" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="1100" style="text-align: center;">
+<div class='col-xs-2'>
+		<nav class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="100" style="text-align: right; margin: right;">
 			<h1> Users on PM:</h1> 
-			<div class="container col-xs-2">
+		<ul class="nav bs-doc-slidenav "> 
 				 <?php
     
      $query = "SELECT *
 									FROM  user 
-									WHERE  privilige !=1
+									WHERE  privilige !=1 and id != $userid
 									";
 						$stm = $dbh->query($query);
 						$results = $stm->fetchAll();
@@ -204,12 +220,13 @@
 							print"
      
      
-      <a class='btn col-xs-2' href='#$id'><i class='glyphicon glyphicon-user'></i>$name<span class='sr-only'></a>";
+     <li > <a class='btn'  href='#$id'><i class='glyphicon glyphicon-user'></i>$name<span class='sr-only'></a></li >";
 						}
       ?>
+      </ul>
+				</nav>
 				
-				
-			</div>
+			
 			</div>
 </div>
 			
@@ -227,6 +244,39 @@
 			})
 		</script>
 		<script>
+		
+	
+	$('.carousel').carousel({
+  interval: 5000
+   
+})
+
+$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this)
+                .animate({'opacity':'1'},500)    
+                ;
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+	
 	$('.collapse').collapse()
 </script>
 	</body>
