@@ -1,60 +1,98 @@
 <!DOCTYPE html>
 <html lang="en"> 
 	<head>
-		  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		  
-		<meta charset="utf-8">
-		<title>Insert company name here Beta</title>
-		<link href="assets/css/bootstrap.css" rel="stylesheet">
-		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="assets/css/docs.css" rel="stylesheet">
-		<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="../content/css/main.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		
-	</head>
+		<?php
+			
+			include("php/config.php");
 
- 
+			
+			
+			include("php/db.php");			
+			
+			include("includes/head.php");
+			
+			include("/~dallingn1/2014fall/pro/php/Qmessage.php");
+			
+			if(isset($_POST['submit'])){
+				$index = 0;
+				$message = "";
+				while(isset($_POST["answer_$index"])){
+					$message += $_POST["answer_$index"] . '\n';
+					$index++;
+				}
+				
+				q_message($message, $_SESSION['id'], 0);
+			}
+		?>
+	</head>
 	<body>
-		 <?php
-    include 'UserNavBar.php';
-    ?>
-<header><h1>Questionarie page </h1></header>
+		<?php
+			include 'includes/UserNavBar.php';
+			if($_SESSION['privilige'] != 2 ) {
+				print "You are not authorized to view this content.";
+				die();
+			}
+		?>
+		<div class="container">
+		<header><h1>Questionnaire page </h1></header>
 		<h2>Please anwser 3 out of 5 questions below:</h2>
-		<form>
-			<ul>
-				<li> 
-					<p>Question 1</p>
-					 <input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 2</p>
-					 <input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 3</p>
-					 <input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 4</p>
-					 <input type= "type" name="full name"/> <br>
-				</li>
-				<li> 
-					<p>Question 5</p>
-					 <input type= "type" name="full name"/> <br>
-				</li>
-			</ul>
-			<input type="submit" name="submit" id="submit" value="Submit" />
-			<a class="btn-lg" href="user.php">CUT TO USER</a>
+		<form action="questionarie.php" method="post">
+			<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Question #</th>
+							<th>Question Descriptions</th>
+							<th>Answer</th>
+						</tr>
+					</thead>
+					<tbody>
+			<?php
+						
+						print"<h3>REQUIRED Questions are in red  (User must awsner these questions)</h3>";
+							$query = "SELECT * 
+									FROM  `question` 
+									WHERE  `required` =1 &&  `active` =1";
+							$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							
+							foreach ($results as $question) {
+								$id = $question['id'];
+								$require = $question['required'];
+								$description= $question['description'];
+								print "
+								<tr style=' background-color: 	#FAEBD7;'>
+									<th >$id</th>
+									<td >$description</td>
+									<td><input type='text' id ='$id' name='answer[]'/></td>
+								";
+								
+								
+							}
+							
+							$query = "SELECT * 
+									FROM  `question` 
+									WHERE  `required` =0 &&  `active` =1";
+									$stm = $dbh->query($query);
+							$results = $stm->fetchAll();
+							$index = 0;
+									foreach ($results as $question) {
+								$id = $question['id'];
+								$description= $question['description'];
+								print "
+								<tr >
+									<th class='col-xs-12 col-sm-1'>$id</th>
+									<td class='col-xs-12 col-sm-5'>$description</td>
+									<td><input type='text' id ='$id' name='anwser_$index'/></td>
+								
+								";
+								$index++;
+								
+							}
+						?>
+						
+					</tbody></table>
+			<input type="submit" name="submit" id="submit" value="Submit" />			
 		</form>
-		
-		
-		
-	
+		</div>
 	</body>
-	</html>
+</html>
