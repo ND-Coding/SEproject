@@ -10,6 +10,7 @@ $query = "INSERT INTO `message` (`id`, `user_id`, `from_admin`, `content`, `time
 VALUES (NULL, '$id', '0','$content', CURRENT_TIMESTAMP,'$nid')";
 
 
+
 if(!$dbh->query($query)){
 	var_dump( $dbh->errorinfo());
 }else {	
